@@ -123,6 +123,7 @@ body{
 .cards-wrapper .card .progress-bars .progress-bar:hover{
     background-color: #61845A;
 }
+
 .cards-wrapper .card .delete-button{
     position: absolute;
     top: 10px;
@@ -154,18 +155,22 @@ body{
 
 /* Modal Content/Box */
 .modal-content {
-  background-color: #fefefe;
+  background-color: rgba(255, 255, 255, 0.85);
   margin: 15% auto; /* 15% from the top and centered */
   padding: 20px;
   border: 1px solid #888;
-  border-radius: 40px 0 40px 0;
+  border-radius: 40px;
   width: 70%; /* Could be more or less, depending on screen size */
   height: 70%;
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
+  color: black;
+  font-size: 25px;
 }
+
+
 
 /* The Close Button */
 .close {
@@ -187,10 +192,24 @@ body{
 
 .modal-content input{
     border:1px solid #DADADA;
-    box-shadow:0 0 10px;
+    box-shadow: 5px 5px 15px #61845A;
+    transition: 0.3s ease-out;
+}
+
+.modal-content input:focus{
+    transform: scale(1.05);
+    box-shadow: 5px 5px 15px #61845A;
 }
 
 .modal-content .titleDiv, .todoDiv, .descDiv, .inputDiv{
     padding: 10px 0px;
 }
 
+
+@media screen and (maxwidth: 600px) {
+    body .cards-wrapper{
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+    }
+}
